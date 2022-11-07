@@ -1,0 +1,36 @@
+class Solution {
+  public List<String> printVertically(String s) {
+      String[] str = s.split(" ");
+      String ss = "";
+      int index = 0;
+      int length = str.length;
+      
+
+      List<String> list = new ArrayList<String>();  
+      
+      //find the longest string = str[index]
+      for(int i = 0; i < length; i++){
+          if(str[index].length() < str[i].length()){
+              index = i;
+          }
+      }
+
+
+      for(int i = 0; i < str[index].length(); i ++){  //iterating col
+          for(int j = 0; j < length; j++){    //iterating rows
+              if(i < str[j].length()){
+                  ss += (str[j].charAt(i));
+              }else
+                  ss += " ";
+          }
+          list.add(ss.stripTrailing());
+          ss="";
+      } 
+      
+      return list;  
+  }
+}package LeetCode;
+
+public class 1324. Print Words Vertically {
+  
+}

@@ -1,0 +1,22 @@
+class Solution {
+    public int maximum69Number (int num) {
+        
+        int x = num / 1000;
+        int y = (num % 1000) / 100;
+        int z = (num % 100) / 10;
+        int a = (num % 10) % 10;
+
+        if(x == 6){
+            return (9 * 1000) + (y*100) + (z * 10) + a;
+        }else if(y == 6){
+            return (x * 1000) + (9 * 100) + (z * 10) + a;
+        }else if(z == 6){
+            return (x * 1000) + (y * 100) + (9 * 10) + a;
+        }else if(a == 6){
+            return (x * 1000) + (y * 100) + (z * 10) + 9;
+        }else {
+            return num;
+        }
+
+    }
+}
